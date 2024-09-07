@@ -1,0 +1,16 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: eclipse-temurin:21.0.4_7-jdk
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Build
+        run: echo "Building..."
