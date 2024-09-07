@@ -21,3 +21,10 @@ jobs:
     steps:
       - name: Test
         run: echo "Testing..."
+  deploy-staging:
+    needs: test-component
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: deploy
+        run: echo "Deploying..."
