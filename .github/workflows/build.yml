@@ -28,3 +28,10 @@ jobs:
     steps:
       - name: deploy
         run: echo "Deploying..."
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: deploy
+        run: echo "Deploying..."
